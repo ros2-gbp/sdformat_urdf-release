@@ -1,0 +1,12 @@
+Source: ros-rolling-sdformat-urdf
+Section: misc
+Priority: optional
+Maintainer: Shane Loretz <sloretz@osrfoundation.org>
+Build-Depends: debhelper (>= 9.0.0), libsdformat9-dev, liburdfdom-headers-dev, ros-rolling-ament-cmake-gtest, ros-rolling-ament-cmake-ros, ros-rolling-ament-lint-auto, ros-rolling-ament-lint-common, ros-rolling-pluginlib, ros-rolling-sdformat-test-files, ros-rolling-tinyxml2-vendor, ros-rolling-urdf, ros-rolling-urdf-parser-plugin, ros-rolling-ros-workspace
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-rolling-sdformat-urdf
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libsdformat9-dev, ros-rolling-ament-cmake-ros, ros-rolling-tinyxml2-vendor, ros-rolling-urdf, ros-rolling-urdf-parser-plugin, ros-rolling-ros-workspace
+Description: URDF plugin to parse SDFormat XML into URDF C++ DOM objects.
