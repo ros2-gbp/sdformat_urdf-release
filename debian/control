@@ -1,0 +1,12 @@
+Source: ros-galactic-sdformat-urdf
+Section: misc
+Priority: optional
+Maintainer: Shane Loretz <sloretz@osrfoundation.org>
+Build-Depends: debhelper (>= 9.0.0), libsdformat9-dev, liburdfdom-headers-dev, ros-galactic-ament-cmake-gtest, ros-galactic-ament-cmake-ros, ros-galactic-ament-lint-auto, ros-galactic-ament-lint-common, ros-galactic-pluginlib, ros-galactic-sdformat-test-files, ros-galactic-tinyxml2-vendor, ros-galactic-urdf, ros-galactic-urdf-parser-plugin, ros-galactic-ros-workspace
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-galactic-sdformat-urdf
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libsdformat9-dev, ros-galactic-ament-cmake-ros, ros-galactic-tinyxml2-vendor, ros-galactic-urdf, ros-galactic-urdf-parser-plugin, ros-galactic-ros-workspace
+Description: URDF plugin to parse SDFormat XML into URDF C++ DOM objects.
