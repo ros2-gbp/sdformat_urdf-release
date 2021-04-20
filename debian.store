@@ -1,1 +1,1 @@
-{"trim": "", "base": "724f9c6", "trimbase": "", "parent": "debian/rolling/sdformat_urdf", "previous": "4ba2501"}
+{"base": "40dea74", "parent": "debian/galactic/sdformat_urdf", "previous": "c6fcaf6", "trim": "", "trimbase": ""}
