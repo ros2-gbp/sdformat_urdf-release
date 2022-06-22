@@ -1,0 +1,12 @@
+Source: ros-humble-sdformat-test-files
+Section: misc
+Priority: optional
+Maintainer: Shane Loretz <sloretz@osrfoundation.org>
+Build-Depends: debhelper (>= 9.0.0), cmake, ros-humble-ros-workspace
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-sdformat-test-files
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, cmake, ros-humble-ros-workspace
+Description: Example SDFormat XML files for testing tools using hthis format.
