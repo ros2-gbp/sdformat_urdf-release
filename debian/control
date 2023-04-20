@@ -1,0 +1,12 @@
+Source: ros-iron-sdformat-urdf
+Section: misc
+Priority: optional
+Maintainer: Shane Loretz <sloretz@osrfoundation.org>
+Build-Depends: debhelper (>= 9.0.0), libsdformat12-dev, liburdfdom-headers-dev, ros-iron-ament-cmake-gtest <!nocheck>, ros-iron-ament-cmake-ros, ros-iron-ament-lint-auto <!nocheck>, ros-iron-ament-lint-common <!nocheck>, ros-iron-pluginlib, ros-iron-rcutils, ros-iron-sdformat-test-files <!nocheck>, ros-iron-tinyxml2-vendor, ros-iron-urdf, ros-iron-urdf-parser-plugin, ros-iron-ros-workspace
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-iron-sdformat-urdf
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libsdformat12-dev, liburdfdom-headers-dev, ros-iron-ament-cmake-ros, ros-iron-pluginlib, ros-iron-rcutils, ros-iron-tinyxml2-vendor, ros-iron-urdf, ros-iron-urdf-parser-plugin, ros-iron-ros-workspace
+Description: URDF plugin to parse SDFormat XML into URDF C++ DOM objects.
