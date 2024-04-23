@@ -14,18 +14,21 @@ find_package(ament_cmake_ros REQUIRED)
 
 find_package(pluginlib REQUIRED)
 find_package(rcutils REQUIRED)
-find_package(sdformat9 REQUIRED)
-find_package(urdfdom_headers REQUIRED)
+find_package(urdfdom_headers 1.0.6 REQUIRED)
 find_package(urdf_parser_plugin REQUIRED)
 find_package(tinyxml2_vendor REQUIRED)
 find_package(TinyXML2 REQUIRED)
+
+find_package(sdformat_vendor REQUIRED)
+find_package(sdformat REQUIRED)
 
 # Add sdformat_urdf shared library
 add_library(sdformat_urdf SHARED
   src/sdformat_urdf.cpp
 )
 target_link_libraries(sdformat_urdf PUBLIC
-    sdformat9::sdformat9
+  sdformat::core
+  urdfdom_headers::urdfdom_headers
 )
 target_link_libraries(sdformat_urdf PRIVATE
   rcutils::rcutils
@@ -34,11 +37,12 @@ target_include_directories(sdformat_urdf
   PUBLIC
     "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
     "$<INSTALL_INTERFACE:include>"
-    ${urdfdom_headers_INCLUDE_DIRS}
 )
 
 # Add sdformat_urdf_plugin module library
-add_library(sdformat_urdf_plugin MODULE
+# not actually a MODULE as workaround for
+# https://github.com/ros/pluginlib/issues/200
+add_library(sdformat_urdf_plugin SHARED
   src/sdformat_urdf_plugin.cpp
 )
 target_link_libraries(sdformat_urdf_plugin PRIVATE
@@ -49,8 +53,12 @@ target_link_libraries(sdformat_urdf_plugin PRIVATE
   urdf_parser_plugin::urdf_parser_plugin
 )
 
+ament_export_dependencies(pluginlib)
+ament_export_dependencies(rcutils)
+ament_export_dependencies(sdformat_vendor)
+ament_export_dependencies(tinyxml2)
+ament_export_dependencies(urdf_parser_plugin)
 ament_export_dependencies(urdfdom_headers)
-ament_export_dependencies(sdformat9)
 
 install(TARGETS sdformat_urdf EXPORT sdformat_urdf-export
   ARCHIVE DESTINATION lib
@@ -74,7 +82,7 @@ pluginlib_export_plugin_description_file(urdf_parser_plugin "sdformat_urdf_plugi
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
-  find_package(sdformat_test_files 0.1 REQUIRED)
+  find_package(sdformat_test_files REQUIRED)
   ament_lint_auto_find_test_dependencies()
 
   sdformat_test_files_get_model_sdf("path_to_sdf_geometry_box" "geometry_box")
@@ -97,6 +105,7 @@ if(BUILD_TESTING)
   sdformat_test_files_get_model_sdf("path_to_sdf_joint_fixed" "joint_fixed")
   sdformat_test_files_get_model_sdf("path_to_sdf_joint_gearbox" "joint_gearbox")
   sdformat_test_files_get_model_sdf("path_to_sdf_joint_prismatic" "joint_prismatic")
+  sdformat_test_files_get_model_sdf("path_to_sdf_joint_prismatic_no_axis" "joint_prismatic_no_axis")
   sdformat_test_files_get_model_sdf("path_to_sdf_joint_revolute" "joint_revolute")
   sdformat_test_files_get_model_sdf("path_to_sdf_joint_revolute2" "joint_revolute2")
   sdformat_test_files_get_model_sdf("path_to_sdf_joint_revolute_axis" "joint_revolute_axis")

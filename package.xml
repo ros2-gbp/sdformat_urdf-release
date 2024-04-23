@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<package format="2">
+<package format="3">
   <name>sdformat_urdf</name>
-  <version>0.1.0</version>
+  <version>2.0.1</version>
   <description>
     URDF plugin to parse SDFormat XML into URDF C++ DOM objects.
   </description>
@@ -17,13 +17,21 @@
   <buildtool_depend>ament_cmake_ros</buildtool_depend>
   <buildtool_export_depend>ament_cmake_ros</buildtool_export_depend>
 
-  <depend>sdformat</depend>
+  <depend>sdformat_vendor</depend>
+
   <depend>urdf</depend>
 
   <build_depend>liburdfdom-headers-dev</build_depend>
   <build_depend>pluginlib</build_depend>
+  <build_depend>rcutils</build_depend>
   <build_depend>tinyxml2_vendor</build_depend>
   <build_depend>urdf_parser_plugin</build_depend>
+
+  <build_export_depend>liburdfdom-headers-dev</build_export_depend>
+  <build_export_depend>pluginlib</build_export_depend>
+  <build_export_depend>rcutils</build_export_depend>
+  <build_export_depend>tinyxml2_vendor</build_export_depend>
+  <build_export_depend>urdf_parser_plugin</build_export_depend>
 
   <exec_depend>tinyxml2_vendor</exec_depend>
   <exec_depend>urdf_parser_plugin</exec_depend>
