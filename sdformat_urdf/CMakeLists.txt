@@ -14,18 +14,20 @@ find_package(ament_cmake_ros REQUIRED)
 
 find_package(pluginlib REQUIRED)
 find_package(rcutils REQUIRED)
-find_package(sdformat12 REQUIRED)
 find_package(urdfdom_headers 1.0.6 REQUIRED)
 find_package(urdf_parser_plugin REQUIRED)
 find_package(tinyxml2_vendor REQUIRED)
 find_package(TinyXML2 REQUIRED)
+
+find_package(sdformat_vendor REQUIRED)
+find_package(sdformat REQUIRED)
 
 # Add sdformat_urdf shared library
 add_library(sdformat_urdf SHARED
   src/sdformat_urdf.cpp
 )
 target_link_libraries(sdformat_urdf PUBLIC
-    sdformat12::sdformat12
+  sdformat::core
   urdfdom_headers::urdfdom_headers
 )
 target_link_libraries(sdformat_urdf PRIVATE
@@ -38,7 +40,9 @@ target_include_directories(sdformat_urdf
 )
 
 # Add sdformat_urdf_plugin module library
-add_library(sdformat_urdf_plugin MODULE
+# not actually a MODULE as workaround for
+# https://github.com/ros/pluginlib/issues/200
+add_library(sdformat_urdf_plugin SHARED
   src/sdformat_urdf_plugin.cpp
 )
 target_link_libraries(sdformat_urdf_plugin PRIVATE
@@ -51,7 +55,7 @@ target_link_libraries(sdformat_urdf_plugin PRIVATE
 
 ament_export_dependencies(pluginlib)
 ament_export_dependencies(rcutils)
-ament_export_dependencies(sdformat12)
+ament_export_dependencies(sdformat_vendor)
 ament_export_dependencies(tinyxml2)
 ament_export_dependencies(urdf_parser_plugin)
 ament_export_dependencies(urdfdom_headers)
