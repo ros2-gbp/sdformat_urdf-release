@@ -1,3 +1,28 @@
+## sdformat_urdf (jazzy) - 1.0.2-1
+
+The packages in the `sdformat_urdf` repository were released into the `jazzy` distro by running `/usr/bin/bloom-release --rosdistro jazzy --track jazzy sdformat_urdf -e` on `Tue, 23 Apr 2024 10:22:47 -0000`
+
+These packages were released:
+- `sdformat_test_files`
+- `sdformat_urdf`
+
+Version of package(s) in repository `sdformat_urdf`:
+
+- upstream repository: https://github.com/ros/sdformat_urdf.git
+- release repository: https://github.com/ros2-gbp/sdformat_urdf-release.git
+- rosdistro version: `null`
+- old version: `null`
+- new version: `1.0.2-1`
+
+Versions of tools used:
+
+- bloom version: `0.12.0`
+- catkin_pkg version: `0.5.2`
+- rosdep version: `0.22.2`
+- rosdistro version: `0.9.0`
+- vcstools version: `0.1.42`
+
+
 ## sdformat_urdf (rolling) - 2.0.1-1
 
 The packages in the `sdformat_urdf` repository were released into the `rolling` distro by running `/usr/bin/bloom-release --rosdistro rolling --track rolling sdformat_urdf -e` on `Tue, 23 Apr 2024 10:11:37 -0000`
