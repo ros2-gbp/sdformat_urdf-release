@@ -1,0 +1,12 @@
+Source: ros-jazzy-sdformat-urdf
+Section: misc
+Priority: optional
+Maintainer: Shane Loretz <sloretz@osrfoundation.org>
+Build-Depends: debhelper (>= 9.0.0), liburdfdom-headers-dev, ros-jazzy-ament-cmake-gtest <!nocheck>, ros-jazzy-ament-cmake-ros, ros-jazzy-ament-lint-auto <!nocheck>, ros-jazzy-ament-lint-common <!nocheck>, ros-jazzy-pluginlib, ros-jazzy-rcutils, ros-jazzy-sdformat-test-files <!nocheck>, ros-jazzy-sdformat-vendor, ros-jazzy-tinyxml2-vendor, ros-jazzy-urdf, ros-jazzy-urdf-parser-plugin, ros-jazzy-ros-workspace
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-jazzy-sdformat-urdf
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, liburdfdom-headers-dev, ros-jazzy-ament-cmake-ros, ros-jazzy-pluginlib, ros-jazzy-rcutils, ros-jazzy-sdformat-vendor, ros-jazzy-tinyxml2-vendor, ros-jazzy-urdf, ros-jazzy-urdf-parser-plugin, ros-jazzy-ros-workspace
+Description: URDF plugin to parse SDFormat XML into URDF C++ DOM objects.
