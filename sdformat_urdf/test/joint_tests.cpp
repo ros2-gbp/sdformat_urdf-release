@@ -17,6 +17,8 @@
 #include <urdf_model/types.h>
 #include <sdformat_urdf/sdformat_urdf.hpp>
 
+#include <gz/math/Pose3.hh>
+#include <gz/math/Vector3.hh>
 #include <sdf/Types.hh>
 
 #include "sdf_paths.hpp"
@@ -37,11 +39,11 @@ TEST(Joint, joint_ball)
 
   EXPECT_EQ("joint_ball", joint->name);
   EXPECT_EQ(urdf::Joint::FLOATING, joint->type);
-  ASSERT_EQ(nullptr, joint->dynamics);
-  ASSERT_EQ(nullptr, joint->limits);
-  ASSERT_EQ(nullptr, joint->safety);
-  ASSERT_EQ(nullptr, joint->calibration);
-  ASSERT_EQ(nullptr, joint->mimic);
+  EXPECT_EQ(nullptr, joint->dynamics);
+  EXPECT_EQ(nullptr, joint->limits);
+  EXPECT_EQ(nullptr, joint->safety);
+  EXPECT_EQ(nullptr, joint->calibration);
+  EXPECT_EQ(nullptr, joint->mimic);
 }
 
 TEST(Joint, joint_continuous)
@@ -64,10 +66,10 @@ TEST(Joint, joint_continuous)
   ASSERT_NE(nullptr, joint->dynamics);
   EXPECT_DOUBLE_EQ(0, joint->dynamics->damping);
   EXPECT_DOUBLE_EQ(0, joint->dynamics->friction);
-  ASSERT_EQ(nullptr, joint->limits);
-  ASSERT_EQ(nullptr, joint->safety);
-  ASSERT_EQ(nullptr, joint->calibration);
-  ASSERT_EQ(nullptr, joint->mimic);
+  EXPECT_EQ(nullptr, joint->limits);
+  EXPECT_EQ(nullptr, joint->safety);
+  EXPECT_EQ(nullptr, joint->calibration);
+  EXPECT_EQ(nullptr, joint->mimic);
 }
 
 TEST(Joint, joint_fixed)
@@ -84,11 +86,11 @@ TEST(Joint, joint_fixed)
 
   EXPECT_EQ("joint_fixed", joint->name);
   EXPECT_EQ(urdf::Joint::FIXED, joint->type);
-  ASSERT_EQ(nullptr, joint->dynamics);
-  ASSERT_EQ(nullptr, joint->limits);
-  ASSERT_EQ(nullptr, joint->safety);
-  ASSERT_EQ(nullptr, joint->calibration);
-  ASSERT_EQ(nullptr, joint->mimic);
+  EXPECT_EQ(nullptr, joint->dynamics);
+  EXPECT_EQ(nullptr, joint->limits);
+  EXPECT_EQ(nullptr, joint->safety);
+  EXPECT_EQ(nullptr, joint->calibration);
+  EXPECT_EQ(nullptr, joint->mimic);
 }
 
 TEST(Joint, joint_gearbox)
@@ -201,8 +203,8 @@ TEST(Joint, joint_revolute_axis)
   urdf::JointConstSharedPtr joint = model->getJoint("joint_revolute");
   ASSERT_NE(nullptr, joint);
 
-  const ignition::math::Vector3d expected_axis{0.1, 1.23, 4.567};
-  const ignition::math::Vector3d actual_axis{joint->axis.x, joint->axis.y, joint->axis.z};
+  const gz::math::Vector3d expected_axis{0.1, 1.23, 4.567};
+  const gz::math::Vector3d actual_axis{joint->axis.x, joint->axis.y, joint->axis.z};
 
   EXPECT_EQ("joint_revolute", joint->name);
   EXPECT_EQ(urdf::Joint::REVOLUTE, joint->type);
@@ -221,19 +223,19 @@ TEST(Joint, joint_revolute_axis_in_frame)
   urdf::JointConstSharedPtr joint = model->getJoint("joint_revolute");
   ASSERT_NE(nullptr, joint);
 
-  const ignition::math::Pose3d model_to_frame_in_model{0.05, 0.1, 0.2, 0.1, 0.2, 0.3};
-  const ignition::math::Pose3d model_to_child_in_model{0.1, 0, 0.1, 0, 0, 0};
-  const ignition::math::Pose3d frame_to_child_in_frame =
+  const gz::math::Pose3d model_to_frame_in_model{0.05, 0.1, 0.2, 0.1, 0.2, 0.3};
+  const gz::math::Pose3d model_to_child_in_model{0.1, 0, 0.1, 0, 0, 0};
+  const gz::math::Pose3d frame_to_child_in_frame =
     model_to_frame_in_model.Inverse() * model_to_child_in_model;
-  const ignition::math::Pose3d child_to_joint_in_child{0, 0, 0, 0, 0, 0};
-  const ignition::math::Pose3d frame_to_joint_in_frame =
+  const gz::math::Pose3d child_to_joint_in_child{0, 0, 0, 0, 0, 0};
+  const gz::math::Pose3d frame_to_joint_in_frame =
     frame_to_child_in_frame * child_to_joint_in_child;
 
-  const ignition::math::Vector3d axis_in_frame{0.1, 1.23, 4.567};
-  const ignition::math::Vector3d axis_in_joint =
+  const gz::math::Vector3d axis_in_frame{0.1, 1.23, 4.567};
+  const gz::math::Vector3d axis_in_joint =
     frame_to_joint_in_frame.Inverse().Rot().RotateVector(axis_in_frame);
 
-  const ignition::math::Vector3d actual_axis{joint->axis.x, joint->axis.y, joint->axis.z};
+  const gz::math::Vector3d actual_axis{joint->axis.x, joint->axis.y, joint->axis.z};
 
   EXPECT_EQ("joint_revolute", joint->name);
   EXPECT_EQ(urdf::Joint::REVOLUTE, joint->type);
@@ -255,8 +257,8 @@ TEST(Joint, joint_revolute_default_limits)
   EXPECT_EQ("joint_revolute", joint->name);
   EXPECT_EQ(urdf::Joint::REVOLUTE, joint->type);
   ASSERT_NE(nullptr, joint->limits);
-  EXPECT_DOUBLE_EQ(-1e16, joint->limits->lower);  // SDFormat default
-  EXPECT_DOUBLE_EQ(1e16, joint->limits->upper);  // SDFormat default
+  EXPECT_DOUBLE_EQ(-std::numeric_limits<double>::infinity(), joint->limits->lower);
+  EXPECT_DOUBLE_EQ(std::numeric_limits<double>::infinity(), joint->limits->upper);
   EXPECT_DOUBLE_EQ(std::numeric_limits<double>::infinity(), joint->limits->effort);
   EXPECT_DOUBLE_EQ(std::numeric_limits<double>::infinity(), joint->limits->velocity);
 }
@@ -288,9 +290,9 @@ TEST(Joint, joint_screw)
   EXPECT_EQ(urdf::Joint::FLOATING, joint->type);
   ASSERT_EQ(nullptr, joint->dynamics);
   ASSERT_EQ(nullptr, joint->limits);
-  ASSERT_EQ(nullptr, joint->safety);
-  ASSERT_EQ(nullptr, joint->calibration);
-  ASSERT_EQ(nullptr, joint->mimic);
+  EXPECT_EQ(nullptr, joint->safety);
+  EXPECT_EQ(nullptr, joint->calibration);
+  EXPECT_EQ(nullptr, joint->mimic);
 }
 
 TEST(Joint, joint_universal)
@@ -308,9 +310,9 @@ TEST(Joint, joint_universal)
 
   EXPECT_EQ("joint_universal", joint->name);
   EXPECT_EQ(urdf::Joint::FLOATING, joint->type);
-  ASSERT_EQ(nullptr, joint->dynamics);
-  ASSERT_EQ(nullptr, joint->limits);
-  ASSERT_EQ(nullptr, joint->safety);
-  ASSERT_EQ(nullptr, joint->calibration);
-  ASSERT_EQ(nullptr, joint->mimic);
+  EXPECT_EQ(nullptr, joint->dynamics);
+  EXPECT_EQ(nullptr, joint->limits);
+  EXPECT_EQ(nullptr, joint->safety);
+  EXPECT_EQ(nullptr, joint->calibration);
+  EXPECT_EQ(nullptr, joint->mimic);
 }
