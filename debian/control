@@ -1,0 +1,12 @@
+Source: ros-kilted-sdformat-urdf
+Section: misc
+Priority: optional
+Maintainer: Shane Loretz <sloretz@osrfoundation.org>
+Build-Depends: debhelper (>= 9.0.0), liburdfdom-headers-dev, ros-kilted-ament-cmake-gtest <!nocheck>, ros-kilted-ament-cmake-ros, ros-kilted-ament-lint-auto <!nocheck>, ros-kilted-ament-lint-common <!nocheck>, ros-kilted-pluginlib, ros-kilted-rcutils, ros-kilted-sdformat-test-files <!nocheck>, ros-kilted-sdformat-vendor, ros-kilted-tinyxml2-vendor, ros-kilted-urdf, ros-kilted-urdf-parser-plugin, ros-kilted-ros-workspace
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-kilted-sdformat-urdf
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, liburdfdom-headers-dev, ros-kilted-ament-cmake-ros, ros-kilted-pluginlib, ros-kilted-rcutils, ros-kilted-sdformat-vendor, ros-kilted-tinyxml2-vendor, ros-kilted-urdf, ros-kilted-urdf-parser-plugin, ros-kilted-ros-workspace
+Description: URDF plugin to parse SDFormat XML into URDF C++ DOM objects.

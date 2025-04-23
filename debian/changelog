@@ -1,0 +1,47 @@
+ros-kilted-sdformat-urdf (2.0.1-2noble) noble; urgency=high
+
+
+
+ -- Shane Loretz <sloretz@osrfoundation.org>  Tue, 23 Apr 2024 05:00:00 -0000
+
+ros-kilted-sdformat-urdf (2.0.0-2noble) noble; urgency=high
+
+  * Use gz vendor packages and update to Harmonic (#28 <https://github.com/ros/sdformat_urdf/issues/28>)
+  * Support Gazebo Harmonic (#23 <https://github.com/ros/sdformat_urdf/issues/23>)
+  * ign to gz migration (#19 <https://github.com/ros/sdformat_urdf/issues/19>)
+    * ign->gz
+    * revertingsdf13 changes
+    ---------
+  * Create sdformat_urdf_plugin as SHARED instead of MODULE for macOS compatibility (#22 <https://github.com/ros/sdformat_urdf/issues/22>)
+    * Create sdformat_urdf_plugin as SHARED instead of MODULE for macOS compatibility
+    * Remove trailing whitespace
+  * Support Gazebo Garden (#17 <https://github.com/ros/sdformat_urdf/issues/17>)
+  * updating gtest conditionals (#16 <https://github.com/ros/sdformat_urdf/issues/16>)
+  * Contributors: Addisu Z. Taddese, Dharini Dutia, Louise Poubel, Rhys Mainwaring, Silvio Traversaro
+
+ -- Shane Loretz <sloretz@osrfoundation.org>  Tue, 23 Apr 2024 05:00:00 -0000
+
+ros-kilted-sdformat-urdf (1.0.1-2noble) noble; urgency=high
+
+  * Remove version requirement on sdformat_test_files (#15 <https://github.com/ros/sdformat_urdf/issues/15>)
+  * Contributors: Shane Loretz
+
+ -- Shane Loretz <sloretz@osrfoundation.org>  Tue, 21 Jun 2022 05:00:00 -0000
+
+ros-kilted-sdformat-urdf (1.0.0-2noble) noble; urgency=high
+
+  * Support for universal and ball joint as floating joints #13 <https://github.com/ros/sdformat_urdf/issues/13>
+  * Support SDFormat 12 (#12 <https://github.com/ros/sdformat_urdf/issues/12>)
+  * Use urdfdom_headers::urdfdom_headers (#5 <https://github.com/ros/sdformat_urdf/issues/5>, #6 <https://github.com/ros/sdformat_urdf/issues/6>))
+  * Contributors: Dharini Dutia, Louise Poubel, Shane Loretz
+
+ -- Shane Loretz <sloretz@osrfoundation.org>  Tue, 21 Jun 2022 05:00:00 -0000
+
+ros-kilted-sdformat-urdf (0.1.0-2noble) noble; urgency=high
+
+  * Initial urdf parser plugin that parses sdformat (#1 <https://github.com/ros/sdformat_urdf/issues/1>)
+  * Contributors: Shane Loretz, Addisu Z. Taddese, Steve Peters, Chris Lalancette, Eric Cousineau
+
+ -- Shane Loretz <sloretz@osrfoundation.org>  Mon, 02 Nov 2020 06:00:00 -0000
+
+
