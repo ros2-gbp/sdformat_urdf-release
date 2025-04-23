@@ -1,0 +1,33 @@
+ros-kilted-sdformat-test-files (2.0.1-2bookworm) bookworm; urgency=high
+
+
+
+ -- Shane Loretz <sloretz@osrfoundation.org>  Tue, 23 Apr 2024 05:00:00 -0000
+
+ros-kilted-sdformat-test-files (2.0.0-2bookworm) bookworm; urgency=high
+
+
+
+ -- Shane Loretz <sloretz@osrfoundation.org>  Tue, 23 Apr 2024 05:00:00 -0000
+
+ros-kilted-sdformat-test-files (1.0.1-2bookworm) bookworm; urgency=high
+
+
+
+ -- Shane Loretz <sloretz@osrfoundation.org>  Tue, 21 Jun 2022 05:00:00 -0000
+
+ros-kilted-sdformat-test-files (1.0.0-2bookworm) bookworm; urgency=high
+
+  * Support for universal and ball joint as floating joints #13 <https://github.com/ros/sdformat_urdf/issues/13>
+  * Contributors: Dharini Dutia
+
+ -- Shane Loretz <sloretz@osrfoundation.org>  Tue, 21 Jun 2022 05:00:00 -0000
+
+ros-kilted-sdformat-test-files (0.1.0-2bookworm) bookworm; urgency=high
+
+  * Initial urdf parser plugin that parses sdformat (#1 <https://github.com/ros/sdformat_urdf/issues/1>)
+  * Contributors: Shane Loretz, Addisu Z. Taddese, Steve Peters, Chris Lalancette, Eric Cousineau
+
+ -- Shane Loretz <sloretz@osrfoundation.org>  Mon, 02 Nov 2020 06:00:00 -0000
+
+
