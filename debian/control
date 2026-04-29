@@ -1,0 +1,12 @@
+Source: ros-lyrical-sdformat-urdf
+Section: misc
+Priority: optional
+Maintainer: Shane Loretz <sloretz@osrfoundation.org>
+Build-Depends: debhelper (>= 9.0.0), libtinyxml2-dev, liburdfdom-headers-dev, ros-lyrical-ament-cmake-gtest <!nocheck>, ros-lyrical-ament-cmake-ros, ros-lyrical-ament-lint-auto <!nocheck>, ros-lyrical-ament-lint-common <!nocheck>, ros-lyrical-pluginlib, ros-lyrical-rcutils, ros-lyrical-sdformat-test-files <!nocheck>, ros-lyrical-sdformat-vendor, ros-lyrical-urdf, ros-lyrical-urdf-parser-plugin, ros-lyrical-ros-workspace
+Homepage: https://index.ros.org/p/sdformat_urdf/#lyrical
+Standards-Version: 3.9.2
+
+Package: ros-lyrical-sdformat-urdf
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libtinyxml2-dev, liburdfdom-headers-dev, ros-lyrical-ament-cmake-ros, ros-lyrical-pluginlib, ros-lyrical-rcutils, ros-lyrical-sdformat-vendor, ros-lyrical-urdf, ros-lyrical-urdf-parser-plugin, ros-lyrical-ros-workspace
+Description: URDF plugin to parse SDFormat XML into URDF C++ DOM objects.
