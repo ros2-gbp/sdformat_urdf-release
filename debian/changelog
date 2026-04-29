@@ -1,0 +1,45 @@
+ros-rolling-sdformat-test-files (2.1.0-2resolute) resolute; urgency=high
+
+
+
+ -- Shane Loretz <sloretz@osrfoundation.org>  Tue, 17 Feb 2026 06:00:00 -0000
+
+ros-rolling-sdformat-test-files (2.0.2-2resolute) resolute; urgency=high
+
+
+
+ -- Shane Loretz <sloretz@osrfoundation.org>  Fri, 04 Jul 2025 05:00:00 -0000
+
+ros-rolling-sdformat-test-files (2.0.1-2resolute) resolute; urgency=high
+
+
+
+ -- Shane Loretz <sloretz@osrfoundation.org>  Tue, 23 Apr 2024 05:00:00 -0000
+
+ros-rolling-sdformat-test-files (2.0.0-2resolute) resolute; urgency=high
+
+
+
+ -- Shane Loretz <sloretz@osrfoundation.org>  Tue, 23 Apr 2024 05:00:00 -0000
+
+ros-rolling-sdformat-test-files (1.0.1-2resolute) resolute; urgency=high
+
+
+
+ -- Shane Loretz <sloretz@osrfoundation.org>  Tue, 21 Jun 2022 05:00:00 -0000
+
+ros-rolling-sdformat-test-files (1.0.0-2resolute) resolute; urgency=high
+
+  * Support for universal and ball joint as floating joints #13 <https://github.com/ros/sdformat_urdf/issues/13>
+  * Contributors: Dharini Dutia
+
+ -- Shane Loretz <sloretz@osrfoundation.org>  Tue, 21 Jun 2022 05:00:00 -0000
+
+ros-rolling-sdformat-test-files (0.1.0-2resolute) resolute; urgency=high
+
+  * Initial urdf parser plugin that parses sdformat (#1 <https://github.com/ros/sdformat_urdf/issues/1>)
+  * Contributors: Shane Loretz, Addisu Z. Taddese, Steve Peters, Chris Lalancette, Eric Cousineau
+
+ -- Shane Loretz <sloretz@osrfoundation.org>  Mon, 02 Nov 2020 06:00:00 -0000
+
+
