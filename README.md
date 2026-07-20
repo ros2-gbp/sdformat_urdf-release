@@ -1,3 +1,28 @@
+## sdformat_urdf (rolling) - 3.0.0-1
+
+The packages in the `sdformat_urdf` repository were released into the `rolling` distro by running `/usr/bin/bloom-release --rosdistro rolling --track rolling sdformat_urdf` on `Mon, 20 Jul 2026 13:44:19 -0000`
+
+These packages were released:
+- `sdformat_test_files`
+- `sdformat_urdf`
+
+Version of package(s) in repository `sdformat_urdf`:
+
+- upstream repository: https://github.com/ros/sdformat_urdf.git
+- release repository: https://github.com/ros2-gbp/sdformat_urdf-release.git
+- rosdistro version: `2.1.0-2`
+- old version: `2.1.0-2`
+- new version: `3.0.0-1`
+
+Versions of tools used:
+
+- bloom version: `0.14.3`
+- catkin_pkg version: `1.1.0`
+- rosdep version: `0.26.0`
+- rosdistro version: `1.0.1`
+- vcstools version: `0.1.42`
+
+
 ## sdformat_urdf (rolling) - 2.1.0-1
 
 The packages in the `sdformat_urdf` repository were released into the `rolling` distro by running `/usr/bin/bloom-release --rosdistro rolling --track rolling sdformat_urdf` on `Tue, 17 Feb 2026 14:58:41 -0000`
