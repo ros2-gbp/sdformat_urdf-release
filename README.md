@@ -1,3 +1,28 @@
+## sdformat_urdf (lyrical) - 2.1.1-1
+
+The packages in the `sdformat_urdf` repository were released into the `lyrical` distro by running `/usr/bin/bloom-release --rosdistro lyrical --track lyrical sdformat_urdf -e` on `Tue, 21 Jul 2026 09:16:04 -0000`
+
+These packages were released:
+- `sdformat_test_files`
+- `sdformat_urdf`
+
+Version of package(s) in repository `sdformat_urdf`:
+
+- upstream repository: https://github.com/ros/sdformat_urdf.git
+- release repository: https://github.com/ros2-gbp/sdformat_urdf-release.git
+- rosdistro version: `2.1.0-3`
+- old version: `3.0.0-1`
+- new version: `2.1.1-1`
+
+Versions of tools used:
+
+- bloom version: `0.14.3`
+- catkin_pkg version: `1.1.0`
+- rosdep version: `0.26.0`
+- rosdistro version: `1.0.1`
+- vcstools version: `0.1.42`
+
+
 ## sdformat_urdf (lyrical) - 3.0.0-1
 
 The packages in the `sdformat_urdf` repository were released into the `lyrical` distro by running `/usr/bin/bloom-release --rosdistro lyrical --track lyrical sdformat_urdf` on `Mon, 20 Jul 2026 13:47:58 -0000`
