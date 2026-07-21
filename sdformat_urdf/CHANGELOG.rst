@@ -2,11 +2,11 @@
 Changelog for package sdformat_urdf
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-3.0.0 (2026-07-20)
+2.1.1 (2026-07-20)
 ------------------
-* Include urdf_world types in sdformat_urdf plugin (`#45 <https://github.com/ros/sdformat_urdf/issues/45>`_)
+* Include urdf_world types in sdformat_urdf plugin (`#45 <https://github.com/ros/sdformat_urdf/issues/45>`_) (`#48 <https://github.com/ros/sdformat_urdf/issues/48>`_)
 * Clamp urdf material rgba values to [0, 1] (`#44 <https://github.com/ros/sdformat_urdf/issues/44>`_)
-* Contributors: Rhys Mainwaring, Tobias Fischer
+* Contributors: Rhys Mainwaring, mergify[bot]
 
 2.1.0 (2026-02-17)
 ------------------
